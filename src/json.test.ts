@@ -55,10 +55,14 @@ test('test json field parse', async () => {
             /**
              * I expect to have parsed array and obj here as it works for jsonb.
              * Like here: https://github.com/aborovsky/mikro-orm-json-parse-repro/blob/master/src/jsonb.test.ts#L55-L56
+             * But instead get strings here:
+             *             "jsonArray": "[\"foo\",\"bar\"]",
+             *             "jsonObj": "{\"foo\":2,\"bar\":\"abc\"}"
+             * Is this expected behaviour?
              * Why it differs?
              */
-            "jsonArray": "[\"foo\",\"bar\"]",
-            "jsonObj": "{\"foo\":2,\"bar\":\"abc\"}"
+            "jsonArray": ["foo", "bar"],
+            "jsonObj": {"bar": "abc", foo: 2}
         }]
     );
 
