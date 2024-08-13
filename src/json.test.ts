@@ -54,6 +54,7 @@ test('test json field parse', async () => {
             "id": 1,
             /**
              * I expect to have parsed array and obj here as it works for jsonb.
+             * Like here: https://github.com/aborovsky/mikro-orm-json-parse-repro/blob/master/src/jsonb.test.ts#L55-L56
              * Why it differs?
              */
             "jsonArray": "[\"foo\",\"bar\"]",
